@@ -16,17 +16,17 @@ import {
 
 import { CgFileDocument } from "react-icons/cg";
 
-const NavBar = () => {
+function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
-  const scrollHandler = () => {
+  function scrollHandler() {
     if (window.scrollY >= 20) {
       updateNavbar(true);
     } else {
       updateNavbar(false);
     }
-  };
+  }
 
   window.addEventListener("scroll", scrollHandler);
 
@@ -84,6 +84,16 @@ const NavBar = () => {
 
             <Nav.Item>
               <Nav.Link
+                as={Link}
+                to="/resume"
+                onClick={() => updateExpanded(false)}
+              >
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
                 href="https://soumyajitblogs.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
@@ -91,11 +101,22 @@ const NavBar = () => {
                 <ImBlog style={{ marginBottom: "2px" }} /> Blogs
               </Nav.Link>
             </Nav.Item>
+
+            <Nav.Item className="fork-btn">
+              <Button
+                href="https://github.com/soumyajit4419/Portfolio"
+                target="_blank"
+                className="fork-btn-inner"
+              >
+                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
+                <AiFillStar style={{ fontSize: "1.1em" }} />
+              </Button>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-};
+}
 
 export default NavBar;

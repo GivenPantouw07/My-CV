@@ -5,7 +5,7 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 
-const Home = () => {
+function Home() {
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -22,7 +22,7 @@ const Home = () => {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name"> Given Azarya Pantouw</strong>
+                <strong className="main-name"> SOUMYAJIT BEHERA</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
@@ -44,6 +44,6 @@ const Home = () => {
       <Home2 />
     </section>
   );
-};
+}
 
 export default Home;

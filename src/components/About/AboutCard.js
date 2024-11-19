@@ -2,19 +2,19 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
 
-function AboutCard() {
+const AboutCard = () => {
   return (
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Soumyajit Behera </span>
-            from <span className="purple"> Bhubaneswar, India.</span>
+            Hi Everyone, I am{" "}
+            <span className="purple">Given Azarya Pantouw </span>
+            from <span className="purple"> Manado, Indonesia</span>
             <br />
-            I am currently employed as a software developer at Juspay.
+            I am currently a student at University Klabat.
             <br />
-            I have completed Integrated MSc (IMSc) in Maths and Computing at BIT
-            Mesra.
+            I have completed the 5th semester.
             <br />
             <br />
             Apart from coding, some other activities that I love to do!
@@ -24,7 +24,7 @@ function AboutCard() {
               <ImPointRight /> Playing Games
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
+              <ImPointRight /> Hangout
             </li>
             <li className="about-activity">
               <ImPointRight /> Travelling
@@ -32,13 +32,14 @@ function AboutCard() {
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
+            "People said we need to chase our dreams, that's why i go sleep
+            almost everyday and everywhere."{" "}
           </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
+          <footer className="blockquote-footer">Given</footer>
         </blockquote>
       </Card.Body>
     </Card>
   );
-}
+};
 
 export default AboutCard;
