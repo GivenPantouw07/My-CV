@@ -4,10 +4,10 @@ import Particle from "../Particle";
 import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
-import laptopImg from "../../Assets/about.png";
+import laptopImg from "../../Assets/given.jpg";
 import Toolstack from "./Toolstack";
 
-function About() {
+const About = () => {
   return (
     <Container fluid className="about-section">
       <Particle />
