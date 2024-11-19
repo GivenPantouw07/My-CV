@@ -1,4 +1,5 @@
-import React from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/given2.jpeg";
 import Particle from "../Particle";
@@ -6,6 +7,15 @@ import Home2 from "./Home2";
 import Type from "./Type";
 
 const Home = () => {
+  const [home, setHome] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const homeRef = ref(db, "home");
+    onValue(homeRef, (snapshot) => {
+      const data = snapshot.val();
+      setHome(data);
+    });
+  }, []);
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -14,15 +24,15 @@ const Home = () => {
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
+                {home.text1}{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
-                  👋🏻
+                  {home.emot}
                 </span>
               </h1>
 
               <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> Given Azarya Pantouw</strong>
+                {home.text2}
+                <strong className="main-name"> {home.text3}</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
@@ -44,6 +54,6 @@ const Home = () => {
       <Home2 />
     </section>
   );
-}
+};
 
 export default Home;
